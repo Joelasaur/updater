@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Demo of basic log in and other feature testing using Cypress",
   "main": "index.js",
+  "scripts": {
+    "cypress-record": "cypress run --record --key ${CYPRESS_UPDATER_RECORD_KEY}"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Joelasaur/updater.git"

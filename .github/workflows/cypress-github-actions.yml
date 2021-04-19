@@ -3,6 +3,9 @@ on: [push]
 jobs:
   Run-Cypress-Tests:
     runs-on: ubuntu-latest
+    # Docker image with Cypress pre-installed
+    # https://github.com/cypress-io/cypress-docker-images/tree/master/included
+    container: cypress/included:7.1.0
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -14,4 +17,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Run Cypress Tests
+        run: cypress run --record --key ${CYPRESS_UPDATER_RECORD_KEY}
       - run: echo "🍏 This job's status is ${{ job.status }}."

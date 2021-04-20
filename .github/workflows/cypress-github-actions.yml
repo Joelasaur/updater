@@ -24,6 +24,9 @@ jobs:
           echo "Current github workspace: ${{ github.workspace }}"
           pwd
           ls -a
+      - name: Install Cypress dependencies like typescript
+        # TODO: Separate Cypress dependencies from application code dependencies so this doesn't take forever
+        uses: bahmutov/npm-install@v1
       - name: Run Cypress Tests
         run: cypress run --record --key $CYPRESS_UPDATER_RECORD_KEY
       - run: echo "🍏 This job's status is ${{ job.status }}."

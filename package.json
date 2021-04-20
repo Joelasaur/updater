@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/Joelasaur/updater#readme",
   "devDependencies": {
-    "cypress": "7.1.0",
-    "typescript": "^4.2.4"
+    "typescript": "4.2.4"
   }
 }

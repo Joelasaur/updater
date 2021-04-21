@@ -11,8 +11,13 @@ it('should login', () => {
     cy.createUser().then((creds) => {
         cy.logout();
         cy.login(creds);
+
+        // TODO: The firstName doesn't consistently appear upon login, even with a long timeout
+        // so we will wait on something more consistent
+        // See github issue: https://github.com/Joelasaur/updater/issues/4
+        // cy.contains('Welcome, ' + creds.firstName, { timeout: 10000 });
         // User greeting page has loaded
-        cy.contains('Welcome, ' + creds.firstName);
+        cy.contains('Set up Internet/TV', { timeout: 10000 });
     });
 
 });

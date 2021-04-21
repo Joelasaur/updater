@@ -114,7 +114,11 @@ Cypress.Commands.add('createUser', (): Cypress.Chainable<credentials> => {
     cy.get('[name="password"]').type(password);
     cy.get('[type="submit"]').click();
 
-    cy.contains('Welcome, ' + firstName, { timeout: 10000 });
+    // TODO: The firstName doesn't consistently appear upon login, even with a long timeout
+    // so we will wait on something more consistent
+    // See github issue: https://github.com/Joelasaur/updater/issues/4
+    // cy.contains('Welcome, ' + firstName, { timeout: 10000 });
+    cy.contains('Set up Internet/TV', { timeout: 10000 });
 
     // Return credentials if additional logins are required in the test
     return cy.wrap({ username: email, password, firstName });

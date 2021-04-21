@@ -1,4 +1,5 @@
 {
-    "baseUrl": "https://app.preprod.updatron.com/n/quick-setup",
-    "projectId": "yx5632"
+    "baseUrl": "https://app.preprod.updatron.com",
+    "projectId": "yx5632",
+    "supportFile": "cypress/support/commands.ts"
 }

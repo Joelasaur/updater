@@ -1,5 +1,5 @@
 import * as faker from 'faker';
-
+import { credentials } from './credentials';
 /**
  * Helper function that gets tomorrow's date
  * @returns a date string in the format YYYY-MM-DD
@@ -11,9 +11,10 @@ function getMoveDate(): string {
 
 }
 // TODO: Set access_token via API instead of UI login
-Cypress.Commands.add('login', {
-    prevSubject: true
-}, (credentials: Cypress.Chainable<[string, string]>): void => {
+Cypress.Commands.add('login', (creds: credentials): void => {
+    Cypress.log({
+        name: 'login'
+    });
     // Seems to be an important request for loading the logged in page,
     // so we will intercept and wait for it
     cy.intercept('POST', 'https://logx.optimizely.com/v1/events').as('events');
@@ -23,16 +24,22 @@ Cypress.Commands.add('login', {
         // since push notifications error out in headless mode
         return false;
     });
-    cy.wrap(credentials).then((creds) => {
-        // Enter login info
-        cy.get('[name="email"]').type(creds[0]);
-        cy.get('[name="password"]').type(creds[1]);
-        // Click submit
-        cy.get('[type="submit"]').click();
-        // Wait for a request to finish instead of an arbitrary length of time
-        cy.wait('@events');
-    });
+    // Enter login info
+    cy.get('[name="email"]').type(creds.username);
+    cy.get('[name="password"]').type(creds.password);
+    // Click submit
+    cy.get('[type="submit"]').click();
+    // Wait for a request to finish instead of an arbitrary length of time
+    cy.wait('@events');
+});
 
+Cypress.Commands.add('logout', (): void => {
+    Cypress.log({
+        name: 'logout'
+    });
+    cy.get('[name="hamburger-menu"]').click();
+    cy.contains('Sign out').click();
+    cy.url().should('include', '/n/quick-setup');
 });
 
 // TODO: Normally this is better done through an API instead of UI 
@@ -40,7 +47,11 @@ Cypress.Commands.add('login', {
  * Creates a random user and returns the new credentials
  * @returns Username, Password 
  */
-Cypress.Commands.add('createUser', (): Cypress.Chainable<[string, string]> => {
+Cypress.Commands.add('createUser', (): Cypress.Chainable<credentials> => {
+    Cypress.log({
+        name: 'createUser'
+    });
+
     cy.visit('/n/invite');
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
@@ -106,5 +117,5 @@ Cypress.Commands.add('createUser', (): Cypress.Chainable<[string, string]> => {
     cy.contains('Welcome, ' + firstName, { timeout: 10000 });
 
     // Return credentials if additional logins are required in the test
-    return cy.wrap([email, password]);
+    return cy.wrap({ username: email, password, firstName });
 });

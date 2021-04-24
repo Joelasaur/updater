@@ -8,7 +8,7 @@ it('should be on the login page', () => {
 });
 
 it('should login', () => {
-    cy.createUser().then((creds) => {
+    cy.createUser(2).then((creds) => {
         cy.logout();
         cy.login(creds);
 

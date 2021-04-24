@@ -1,0 +1,157 @@
+query availableOffers($input: AvailableOffersInput!) {
+    availableOffers(input: $input) {
+      offers {
+        code
+        providerCode
+        name
+        disclaimer
+        disclaimers {
+          disclaimer
+          displayLocation
+          referenceMark
+          __typename
+        }
+        highlights
+        extendedHighlights
+        promotions {
+          description
+          disclaimer {
+            disclaimer
+            displayLocation
+            referenceMark
+            __typename
+          }
+          name
+          __typename
+        }
+        pricing {
+          price
+          charges {
+            amount
+            description
+            type
+            term {
+              unit
+              length
+              __typename
+            }
+            __typename
+          }
+          term {
+            unit
+            length
+            __typename
+          }
+          __typename
+        }
+        tags
+        ... on TvInternetOffer {
+          products {
+            internet {
+              name
+              downloadSpeed {
+                value
+                unit
+                __typename
+              }
+              uploadSpeed {
+                value
+                unit
+                __typename
+              }
+              type
+              features
+              __typename
+            }
+            phone {
+              name
+              type
+              features
+              __typename
+            }
+            tv {
+              name
+              channels {
+                count
+                lineupCodes
+                __typename
+              }
+              features
+              additionalLanguages
+              type
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+        metadata {
+          fromCache
+          cachedAt
+          __typename
+        }
+        __typename
+      }
+      request {
+        id
+        address {
+          street
+          unit
+          city
+          state
+          postalCode
+          __typename
+        }
+        __typename
+      }
+      providerSummaries {
+        availability
+        queryAddress {
+          street
+          unit
+          city
+          state
+          postalCode
+          __typename
+        }
+        addressSuggestions {
+          street
+          unit
+          city
+          state
+          postalCode
+          __typename
+        }
+        status
+        error {
+          code
+          message
+          __typename
+        }
+        provider {
+          id
+          code
+          name
+          featured
+          exclusive
+          displayName
+          url
+          phoneNumber
+          logo {
+            url
+            __typename
+          }
+          validationSteps
+          config {
+            supportExistingCustomer
+            supportAddressSuggestions
+            __typename
+          }
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+  }
+  

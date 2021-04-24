@@ -4,11 +4,13 @@ import { credentials } from './credentials';
  * Helper function that gets tomorrow's date
  * @returns a date string in the format YYYY-MM-DD
  */
-function getMoveDate(): string {
+function getMoveDate(tMinusMoveDate: number): string {
     const today = new Date();
     // Robust way to utilize the Date library for tomorrow's date
-    return new Date(today.setDate(today.getDate() + 1)).toISOString().split('T')[0];
-
+    // TODO: Apparently there's an entirely new page load for dates
+    // Github issue here https://github.com/Joelasaur/updater/issues/6
+    const tomorrow = new Date(today.setDate(today.getDate() + tMinusMoveDate)).toISOString().split('T')[0];
+    return tomorrow;
 }
 // TODO: Set access_token via API instead of UI login
 Cypress.Commands.add('login', (creds: credentials): void => {
@@ -45,9 +47,10 @@ Cypress.Commands.add('logout', (): void => {
 // TODO: Normally this is better done through an API instead of UI 
 /**
  * Creates a random user and returns the new credentials
+ * @param tMinusMoveDate number of days into the future from today's date that the user would like to move
  * @returns Username, Password 
  */
-Cypress.Commands.add('createUser', (): Cypress.Chainable<credentials> => {
+Cypress.Commands.add('createUser', (tMinusMoveDate: number): Cypress.Chainable<credentials> => {
     Cypress.log({
         name: 'createUser'
     });
@@ -56,7 +59,7 @@ Cypress.Commands.add('createUser', (): Cypress.Chainable<credentials> => {
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
     const phoneNumber = faker.phone.phoneNumber();
-    const moveDate = getMoveDate();
+    const moveDate = getMoveDate(tMinusMoveDate);
     const email = faker.internet.email();
     const password = faker.internet.password() + '1';
 
@@ -84,11 +87,10 @@ Cypress.Commands.add('createUser', (): Cypress.Chainable<credentials> => {
     cy.wait(1000);
 
     // To Address
-    cy.get('[name="address1"]').eq(1).type('19 Union Sq W');
-    cy.get('[name="apartment"]').eq(1).type('12');
-    cy.get('[name="city"]').eq(1).type('New York');
-    cy.get('[name="state"]').eq(1).select('NY');
-    cy.get('[name="zip"]').eq(1).type('10003');
+    cy.get('[name="address1"]').eq(1).type('3156 Cobblestone Rdg');
+    cy.get('[name="city"]').eq(1).type('Tecumseh');
+    cy.get('[name="state"]').eq(1).select('MI');
+    cy.get('[name="zip"]').eq(1).type('49286');
     cy.get('[type="submit"]').click();
 
     // Rent or own

@@ -1,0 +1,131 @@
+{
+    "code": "9777104669",
+    "providerCode": "xfinity",
+    "name": "Gigabit Speed + Preferred + Xfinity Home Security Plus",
+    "disclaimer": null,
+    "disclaimers": [
+        {
+            "disclaimer": "DetailsandRestrictions:Limited time offer. Restrictions apply. Not available in all areas. New residential customers only. Limited to Preferred TV, Gigabit Speed Internet, and Xfinity Home Security Plus service. Paperless Billing and Automatic Payments required, otherwise monthly service charge automatically increases by $10. Discount will appear on statement within 45 days of enrollment. Equipment, installation, taxes and fees, Broadcast TV Fee (up to $19.45/mo.), Regional Sports Fee (up to $14.45/mo.) and other applicable charges extra, and subject to change during and after the promo. After promo, or if any service is cancelled or downgraded, regular rates apply (subject to change). Service limited to a single outlet. May not be combined with other offers. TV: Limited Basic service subscription required to receive other levels of service. On Demand selections subject to charge indicated at time of purchase. Not all programming available in all areas. Internet: Actual speeds vary and are not guaranteed. For factors affecting speed visit www.xfinity.com/networkmanagement. Home: Equipment required and sold separately. Requires subscription to compatible High-Speed Internet service. Visit xfinity.com/XFINITYHomeSupport for more details. AL: 001484, 001504 Alarm company operators are licensed and regulated by the Alabama Electronic Security Board of Licensure, 7956 Vaughn Road, PMB 392 Montgomery, AL 36116, Phone (334) 264-9388, Fax (334) 264-9332; AR: 12-030; FL: EF0000921, EF20001002, EF0001095; GA: LVU406303, LVU406264, LVU406190; LVU406354; IL: PACA 127-001503; LA: F1691; MI: 3601206217; MS: 15018010; SC: SCBA-13497, SCFA-13440; TN: ACL 1597, ACL 1604; TX: B-16922,-02571, ACR-1672104,-1818; VA: 2705145289, DCJS 11-7361. Valid 01/01/2019. See www.xfinity.com/homesecurity for current list. 30-Day Money-Back Guarantee applies to one month’s recurring service and standard installation charges up to $500. ©2021 Comcast. All rights reserved.",
+            "displayLocation": "details",
+            "referenceMark": null,
+            "__typename": "ServiceabilityDisclaimer"
+        },
+        {
+            "disclaimer": "SystemRequirements:System recommendations to run Xfinity Internet Service with speeds up to 1 Gbps\nYour desktop or laptop should have the following:\n10/100/1000 Gigabit Ethernet interface or adapter for wired connection.\nStandard Cat5e Ethernet cable to facilitate a wired connection is recommended. Please be aware that due to Ethernet overhead on a 1G link, actual speeds might be limited to 940 Megabytes per second.\nCPU: Intel Dual Core i5 2.5GHz or better or AMD Dual Core K10 2.5GHz or better\nOS Requirements: Windows 8.1 (64 bit) or newer or Mac OSX 10.8 or newer\nMemory: 8 GB\nHard Drive: SSD recommended to achieve maximum download speeds\nHard Drive Space: 64 GB or larger\nMac OSX Browsers: Safari 6.2.8 or newer or Firefox 40.0.3 or newer or Chrome 44.0.2403 or newer\nWindows Browsers: IE 11 or newer; MS Edge browser (Windows 10); Firefox 40.0.3 or newer; Chrome 44.0.2403 or newer\nExample machines: Dell Latitude E7450, 2013 Macbook Pro\nIf you have hardware, software and related equipment configurations that can connect to the Internet but that are different from the above recommendations, they will still work with your Xfinity Internet service; however, our testing has shown that these recommendations will work best to achieve your provisioned broadband speed. If you are not experiencing the speeds you expect, remember to test using a hardwired connection to the Internet. Also, make sure you are not in the process of downloading or uploading anything, close all programs using the Internet and power off any other devices that are sharing your home network. Remember, there are a number of external factors that may limit your speed; as a result, actual speeds may vary. For best performance, contact your device manufacturer/software provider for required upgrades, configuration updates, or troubleshooting guides.",
+            "displayLocation": "details",
+            "referenceMark": null,
+            "__typename": "ServiceabilityDisclaimer"
+        }
+    ],
+    "highlights": [
+        "NFL Network, NBA TV, MLB Network",
+        "Thousands of hit shows, top movies, and more On Demand",
+        "Download TV shows & movies with our Xfinity Stream app",
+        "Unlimited devices",
+        "Downloading for today's ultra-connected household",
+        "Streaming through the ultimate WiFi experience",
+        "Multiplayer gaming",
+        "24/7 Professional Monitoring",
+        "24/7 Video Recording",
+        "Real-time Alerts & Remote Access",
+        "NFL Network, NBA TV, MLB Network",
+        "Thousands of hit shows, top movies, and more On Demand",
+        "Download TV shows & movies with our Xfinity Stream app",
+        "Unlimited devices",
+        "Downloading for today's ultra-connected household",
+        "Streaming through the ultimate WiFi experience",
+        "Multiplayer gaming",
+        "24/7 Professional Monitoring",
+        "Download speeds up to 1200 Mbps",
+        "Upload speeds up to 35 Mbps"
+    ],
+    "extendedHighlights": [
+        "Preferred",
+        "Gigabit Speed"
+    ],
+    "promotions": [
+        {
+            "description": "Home Security & 24/7 Video Recording",
+            "disclaimer": {
+                "disclaimer": null,
+                "displayLocation": null,
+                "referenceMark": null,
+                "__typename": "ServiceabilityDisclaimer"
+            },
+            "name": "PromoHighlight6",
+            "__typename": "ServiceabilityPromotion"
+        }
+    ],
+    "pricing": {
+        "price": 180,
+        "charges": [
+            {
+                "amount": 180,
+                "description": null,
+                "type": "short_term",
+                "term": {
+                    "unit": "month",
+                    "length": 12,
+                    "__typename": "ServiceabilityChargeTerm"
+                },
+                "__typename": "ServiceabilityCharge"
+            },
+            {
+                "amount": 226,
+                "description": null,
+                "type": "long_term",
+                "term": {
+                    "unit": "month",
+                    "length": null,
+                    "__typename": "ServiceabilityChargeTerm"
+                },
+                "__typename": "ServiceabilityCharge"
+            }
+        ],
+        "term": {
+            "unit": "month",
+            "length": 12,
+            "__typename": "ServiceabilityPricingTerm"
+        },
+        "__typename": "ServiceabilityPricing"
+    },
+    "tags": null,
+    "metadata": {
+        "fromCache": true,
+        "cachedAt": "2021-04-24T15:05:14.301Z",
+        "__typename": "ServiceabilityOfferMetadata"
+    },
+    "__typename": "TvInternetOffer",
+    "products": {
+        "internet": {
+            "name": "Gigabit Speed",
+            "downloadSpeed": {
+                "value": 1200,
+                "unit": "mbps",
+                "__typename": "ServiceabilityInternetSpeed"
+            },
+            "uploadSpeed": {
+                "value": 35,
+                "unit": "mbps",
+                "__typename": "ServiceabilityInternetSpeed"
+            },
+            "type": "fiber",
+            "features": null,
+            "__typename": "ServiceabilityInternetProduct"
+        },
+        "phone": null,
+        "tv": {
+            "name": "Preferred",
+            "channels": {
+                "count": 200,
+                "lineupCodes": null,
+                "__typename": "ServiceabilityTvChannels"
+            },
+            "features": null,
+            "additionalLanguages": null,
+            "type": "cable",
+            "__typename": "ServiceabilityTvProduct"
+        },
+        "__typename": "ServiceabilityTvInternetProducts"
+    }
+}

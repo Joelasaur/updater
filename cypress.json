@@ -1,5 +1,8 @@
 {
     "baseUrl": "https://app.preprod.updatron.com",
     "projectId": "yx5632",
-    "supportFile": "cypress/support/commands.ts"
+    "supportFile": "cypress/support/commands.ts",
+    "env": {
+        "GRAPHQL_ENDPOINT": "https://api.staging.updater.com/graphql"
+    }
 }

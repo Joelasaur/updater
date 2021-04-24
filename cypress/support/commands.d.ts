@@ -15,7 +15,7 @@ namespace Cypress {
        * Creates a random user and returns the new credentials
        * @returns Username, Password 
        */
-      createUser(): Cypress.Chainable<credentials> 
+      createUser(tMinusMoveDate: number): Cypress.Chainable<credentials> 
       logout(): void
     }
   }

@@ -16,6 +16,9 @@ namespace Cypress {
        * @returns Username, Password 
        */
       createUser(tMinusMoveDate: number): Cypress.Chainable<credentials> 
+      /**
+       * Logs out via the UI 
+       */
       logout(): void
     }
   }

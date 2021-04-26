@@ -11,6 +11,7 @@ describe('Add New Internet/TV Service - e2e', () => {
     beforeEach('Restore LocalStorage', () => {
         cy.restoreLocalStorage();
         // Setup graphql API route test
+        // https://docs.cypress.io/api/commands/intercept#Aliasing-individual-GraphQL-requests
         cy.intercept('POST', Cypress.env('GRAPHQL_ENDPOINT'), (req) => {
             const { body } = req;
             if (body.hasOwnProperty('query') && body.query.includes('availableOffers')) {

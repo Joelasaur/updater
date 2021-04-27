@@ -10,6 +10,7 @@ describe('Add New Internet/TV Service - Detailed', () => {
   
     beforeEach('Restore LocalStorage', () => {
         cy.restoreLocalStorage();
+        cy.url().should('include', '/n/quick-setup');
     });
 
     it('should navigate to Connect Internet/TV page', () => {

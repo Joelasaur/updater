@@ -96,3 +96,4 @@ Quite a lot, actually. This was a fun exercise, but it lacks quality that I woul
 - investigate and fix various issues logged under this repository's github issues tab
 - add cross browser runs to Github Actions
 - add better npm scripts to aid users in different configurations and environments
+- containerize cypress and the updater application with docker-compose for hermetic test environment

@@ -57,8 +57,14 @@ describe('Add New Internet/TV Service - e2e', () => {
                 // Also these hard coded data are subject to flake, might be a better idea 
                 // to move data validation somewhere else and stub this to test just the JSON schema structure
                 expect(firstOffer, 'first offer').to.not.be.empty;
-                expect(firstOffer.code, 'offer code').to.eq('9777104669');
-                expect(firstOffer.pricing.price, 'price').to.eq(180);
+
+                // TODO: this first offer data changes for every new registered user, therefore too flakey for an e2e test
+                // TODO: will need to control either the request going out or the response coming back to make a meaningful test. Perhaps both.
+                // expect(firstOffer.code, 'offer code').to.eq('9777104669');
+                // expect(firstOffer.pricing.price, 'price').to.eq(180);
+                expect(firstOffer.code, 'offer code').to.not.be.empty;
+                expect(firstOffer.pricing.price, 'price').to.be.greaterThan(0);
+                expect(firstOffer.providerCode, 'provider code').to.eq('xfinity');
             });
             cy.url().should('include', 'browse-offers');
 

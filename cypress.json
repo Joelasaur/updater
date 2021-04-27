@@ -4,5 +4,6 @@
     "supportFile": "cypress/support/commands.ts",
     "env": {
         "GRAPHQL_ENDPOINT": "https://api.staging.updater.com/graphql"
-    }
+    },
+    "defaultCommandTimeout": 10000
 }
